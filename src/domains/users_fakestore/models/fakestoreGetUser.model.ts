@@ -1,0 +1,35 @@
+//export interface UsersResponse extends Array<User> { }
+
+export interface User {
+    id: number;
+    email: string;
+    username: string;
+    password: string;
+    name: Name;
+    address: Address;
+    phone: string;
+    __v: number;
+}
+
+export interface Name {
+    firstname: string;
+    lastname: string;
+}
+
+export interface Address {
+    city: string;
+    street: string;
+    number: number;
+    zipcode: string;
+    geolocation: Geolocation;
+}
+
+export interface Geolocation {
+    lat: string;
+    long: string;
+}
+
+export interface ApiError {
+    status: string;
+    message: string;
+}

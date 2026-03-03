@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import { FakeStoreUserService } from "../services/fakeStoreUsers.service";
 import { assertDeleteUserContract } from "../contracts/user.contract.delete";
 
-
 describe("DELETE /users", () => {
 
   const service = new FakeStoreUserService();

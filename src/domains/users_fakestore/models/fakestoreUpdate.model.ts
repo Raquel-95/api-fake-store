@@ -3,5 +3,6 @@ export type ReqResUsersupdateResponse = {
   username: string;
   email: string;
   password: string;
+  phone: string;
 };
  

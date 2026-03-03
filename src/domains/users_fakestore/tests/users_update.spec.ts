@@ -14,15 +14,15 @@ describe("Playground Users API", () => {
  
   const updatePayload = {
     id: 1,
-    email: "John@gmail.com",
-    username: "johnd",
-    password: "mypassword",
+    email: "Pruebas1@gmail.com",
+    username: "Prueba01",
+    password: "asd1123",
   };
  
   qaTest(
     "Validar update exitoso de usuario",
     {
-      tags: ["@TC-FAKE-01", "happy-path"],
+      tags: ["@TC-40001"],
       risk: "HIGH",
       endpointKey: "PUT /users/:id",
       domain: "fakestore_users",
@@ -38,18 +38,29 @@ describe("Playground Users API", () => {
 qaTest(
     "Validar error 400 con ID mal escrito",
     {
-      tags: ["@TC-FAKE-02", "negative"],
-      risk: "MEDIUM",
+      tags: ["40002"],
+      risk: "HIGH",
       endpointKey: "PUT /users/:id",
       domain: "fakestore_users",
     },
     async () => {
-      const res = await usersService.updateUser("1e", updatePayload);
-     
-     // console.log("=== RESPONSE STATUS ===", res.status);
-      //console.log("=== RESPONSE BODY ===", res.data);
-     
+      const res = await usersService.updateUser("1e", updatePayload);  
       expect(res.status).toBe(400);
+      assertErrorContract(res.data);
+    }
+  );
+
+  qaTest(
+    "Validar error 404 con ID vacio",
+    {
+      tags: ["40003"],
+      risk: "HIGH",
+      endpointKey: "PUT /users/:id",
+      domain: "fakestore_users",
+    },
+    async () => {
+      const res = await usersService.updateUser("", updatePayload);  
+      expect(res.status).toBe(404);
       assertErrorContract(res.data);
     }
   );

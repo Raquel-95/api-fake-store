@@ -10,6 +10,12 @@ import { expect } from "vitest";
  
 export function assertErrorContract(data: unknown) {
   // Acepta body vacío
+
+  if (typeof data === "string") {
+    expect(data.length).toBeGreaterThan(0);  
+    return; 
+  }
+
   if (data && typeof data === "object") {
     const obj = data as Record<string, unknown>;
  

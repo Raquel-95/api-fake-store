@@ -41,9 +41,6 @@ describe("FakeStore Users API", () => {
 
             // Contract-based (estructura)
             assertUsersListContract(res.data);
-
-
-
         },
     );
 

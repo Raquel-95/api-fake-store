@@ -1,6 +1,5 @@
 import { clients } from "../../../config/clients";
 import { HttpClient } from "../../../core/http/httpClient";
-//import { CreateUserPayload} from "../contracts/users.contract";
 import { FakeStoreUser } from "../models/fakeStoreUser.model";
 import type { HttpRequestOptions } from "../../../core/http/httpTypes";
 import type { User, ApiError } from "../models/fakestoreGetUser.model"
@@ -29,7 +28,6 @@ export class FakeStoreUserService {
     return this.http.put<ReqResUsersupdateResponse>(`/users/${id}`,body,opts)}
 
   // DELETE: eliminar un usuario
- 
   deleteUser(id: number) {
     return this.http.delete<FakeStoreUserDelete>(`/users/${id}`);
   }

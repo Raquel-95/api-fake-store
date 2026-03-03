@@ -31,4 +31,10 @@ export class FakeStoreUserService {
   deleteUser(id: number) {
     return this.http.delete<FakeStoreUserDelete>(`/users/${id}`);
   }
+
+ // DELETE: eliminar sin ID (caso negativo)
+deleteUserWithoutId() {
+  return this.http.delete<unknown>(`/users/`);
+}
+
 }

@@ -1,4 +1,48 @@
 # Introduction 
+# API Test Framework
+
+Framework de automatización para pruebas de APIs usando **Vitest + TypeScript**, con enfoque en:
+
+- Diseño limpio por dominio
+- Separación de responsabilidades
+- Contract-Based Testing
+- Configuración por ambientes (.env)
+
+---
+
+## 📌 Stack
+
+- TypeScript
+- Vitest
+- Node.js
+- Axios
+- Dotenv
+
+---
+
+# 📂 Estructura del Proyecto
+# API Test Framework
+
+Framework de automatización para pruebas de APIs usando **Vitest + TypeScript**, con enfoque en:
+
+- Diseño limpio por dominio
+- Separación de responsabilidades
+- Contract-Based Testing
+- Configuración por ambientes (.env)
+
+---
+
+## 📌 Stack
+
+- TypeScript
+- Vitest
+- Node.js
+- Axios
+- Dotenv
+
+---
+
+# 📂 Estructura del Proyecto
 API-TEST-FRAMEWORK
 │
 ├── src
@@ -17,3 +61,16 @@ API-TEST-FRAMEWORK
 ├── vitest.config.ts
 ├── package.json
 └── tsconfig.json
+
+
+---
+
+# 🧠 Arquitectura
+
+Cada dominio sigue esta estructura:
+domains/
+ └── users/
+     ├── models/        → Tipos request/response
+     ├── services/      → Llamadas HTTP
+     ├── contracts/     → Validación de contrato
+     └── tests/         → Casos de prueba
